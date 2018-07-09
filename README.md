@@ -11,7 +11,7 @@ The keras implementation of cGAN is based on the following repos
 ----
 ## Pre-requisites
 1. Install [tensorflow](https://www.tensorflow.org/) and [keras](https://keras.io/)
-2. The experiments are conducted on a dataset from Valentini et. al.,  and are downloaded from [here](https://datashare.is.ed.ac.uk/handle/10283/1942). The following script can be used to download the dataset.
+2. The experiments are conducted on a dataset from Valentini et. al.,  and are downloaded from [here](https://datashare.is.ed.ac.uk/handle/10283/1942). The following script can be used to download the dataset. *Requires [sox](http://sox.sourceforge.net/) for converting to 16kHz*.
 ```bash
 $ ./download_dataset.sh
 ```
