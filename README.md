@@ -12,19 +12,19 @@ The keras implementation of cGAN is based on the following repos
 ## Pre-requisites
 1. Install [tensorflow](https://www.tensorflow.org/) and [keras](https://keras.io/)
 2. The experiments are conducted on a dataset from Valentini et. al.,  and are downloaded from [here](https://datashare.is.ed.ac.uk/handle/10283/1942). The following script can be used to download the dataset. *Requires [sox](http://sox.sourceforge.net/) for converting to 16kHz*.
-```bash
-$ ./download_dataset.sh
-```
+    ```bash
+    $ ./download_dataset.sh
+    ```
 ----
 ## Running the model
 1. **Prepare data for training and testing the various models**. The folder path may be edited if you keep the database in a different folder. This script is to be executed only once and the all the models reads from the same location.
-```python
-python prepare_data.py
-```
+    ```python
+    python prepare_data.py
+    ```
 2. **Run the model**. This implementation offers several cGAN configurations. Edit the *opts* variable in run_segan.py for choosing the cofiguration. The results will be automatically saved to different folders. The folder name is generated from ``` python files_ops.py ``` and the foldername automatically includes different configuration options.
-```python
-python run_segan.py
-```
+    ```python
+    python run_segan.py
+    ```
 3. **The testing is also done together with training**. Set *TEST_SEGAN = Flase* for disabling the testing. 
 ----
 ## Misc
