@@ -1,16 +1,16 @@
 # Speech Enhancement using cGANs 
 A fully convolutional end-to-end speech enhancement system using conditional Generative Adversarial Nets (cGANs).
 
-__Under Construction__
+__!!! Under Construction !!!__
 
-## Pre-requisites
+### Pre-requisites
 1. Install [tensorflow](https://www.tensorflow.org/) and [keras](https://keras.io/)
 2. The experiments are conducted on a dataset from Valentini et. al.,  and are downloaded from [here](https://datashare.is.ed.ac.uk/handle/10283/1942). The following script can be used to download the dataset. *Requires [sox](http://sox.sourceforge.net/) for converting to 16kHz*.
     ```bash
     $ ./download_dataset.sh
     ```
 
-## Running the model
+### Running the model
 1. **Prepare data for training and testing the various models**. The folder path may be edited if you keep the database in a different folder. This script is to be executed only once and the all the models reads from the same location.
     ```python
     python prepare_data.py
@@ -21,7 +21,7 @@ __Under Construction__
     ```
 3. **Evaluation on testset is also done together with training**. Set *TEST_SEGAN = False* for disabling testing. 
 ----
-## Misc
+### Misc
 * **This code loads all the data into memory for speeding up training**. But if you dont have enough memory, it is possible  to read the mini-batches from the disk using HDF5 read. In *run_segan.py* 
     ```python
      clean_train_data = np.array(fclean['feat_data'])
