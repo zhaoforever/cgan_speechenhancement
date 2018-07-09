@@ -1,11 +1,16 @@
 #!/bin/bash
 
+
+# specify the location to which the database be copied
+datadir = './data/' 
+
+
 # adapted from https://github.com/santi-pdp/segan
 datasets="clean_trainset_wav noisy_trainset_wav clean_testset_wav noisy_testset_wav"
 
 # DOWNLOAD THE DATASET
-mkdir -p data
-pushd data
+mkdir -p $datadir
+pushd $datadir
 
 for dset in datasets; do
 if [ ! -d ${dset}_16k ]; then
@@ -31,3 +36,6 @@ fi
 done
 
 popd
+
+# make a copy of the filelists in datadir
+cp train_wav.txt test_wav.txt $datadir
