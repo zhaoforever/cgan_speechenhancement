@@ -28,14 +28,14 @@ python run_segan.py
 3. **The testing is also done together with training**. Set *TEST_SEGAN = Flase* for disabling the testing. 
 ----
 ## Misc
-* **This code loads all the data into memory for speeding up training**. But if you dont have enough memory, it is possible to read the mini-batches from the disk using HDF5 read. In *run_segan.py* 
-```python
-clean_train_data = np.array(fclean['feat_data'])
-noisy_train_data = np.array(fnoisy['feat_data'])
-```
-change the above lines to 
- ```python
-clean_train_data = fclean['feat_data']
-noisy_train_data = fnoisy['feat_data']
-```
-**But this can lead to a slow-down of about 20 times (on the test machine)** as the mini-batches are to be read from the disk over several epochs.
+* **This code loads all the data into memory for speeding up training**. But if you dont have enough memory, it is possible  to read the mini-batches from the disk using HDF5 read. In *run_segan.py* 
+    ```python
+     clean_train_data = np.array(fclean['feat_data'])
+     noisy_train_data = np.array(fnoisy['feat_data'])
+     ```
+    change the above lines to 
+    ```python
+    clean_train_data = fclean['feat_data']
+    noisy_train_data = fnoisy['feat_data']
+    ```
+    **But this can lead to a slow-down of about 20 times (on the test machine)** as the mini-batches are to be read from the     disk over several epochs.
