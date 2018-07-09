@@ -13,26 +13,26 @@ mkdir -p $datadir
 pushd $datadir
 
 for dset in datasets; do
-if [ ! -d ${dset}_16k ]; then
-    # Clean utterances
-    if [ ! -f ${dset}.zip ]; then
-        echo 'DOWNLOADING $dset'
-        wget http://datashare.is.ed.ac.uk/bitstream/handle/10283/1942/${dset}.zip
-    fi
-    if [ ! -d ${dset} ]; then
-        echo 'INFLATING ${dset}...'
-        unzip -q ${det}.zip -d $dset
-    fi
     if [ ! -d ${dset}_16k ]; then
-        echo 'CONVERTING WAVS TO 16K...'
-        mkdir -p ${dset}_16k
-        pushd ${dset}
-        ls *.wav | while read name; do
-            sox $name -r 16k ../${dset}_16k/$name
-        done
-        popd
+        # Clean utterances
+        if [ ! -f ${dset}.zip ]; then
+            echo 'DOWNLOADING $dset'
+            wget http://datashare.is.ed.ac.uk/bitstream/handle/10283/1942/${dset}.zip
+        fi
+        if [ ! -d ${dset} ]; then
+            echo 'INFLATING ${dset}...'
+            unzip -q ${det}.zip -d $dset
+        fi
+        if [ ! -d ${dset}_16k ]; then
+            echo 'CONVERTING WAVS TO 16K...'
+            mkdir -p ${dset}_16k
+            pushd ${dset}
+            ls *.wav | while read name; do
+                sox $name -r 16k ../${dset}_16k/$name
+            done
+            popd
+        fi
     fi
-fi
 done
 
 popd
