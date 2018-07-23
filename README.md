@@ -19,7 +19,7 @@ __!!! Under Construction !!!__
     ```python
     python run_segan.py
     ```
-3. **Evaluation on testset is also done together with training**. Set ```python TEST_SEGAN = False``` for disabling testing. 
+3. **Evaluation on testset is also done together with training**. Set ```TEST_SEGAN = False``` for disabling testing. 
 ----
 ### Misc
 * **This code loads all the data into memory for speeding up training**. But if you dont have enough memory, it is possible  to read the mini-batches from the disk using HDF5 read. In ```run_segan.py``` 
