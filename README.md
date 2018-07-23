@@ -15,7 +15,7 @@ __!!! Under Construction !!!__
     ```python
     python prepare_data.py
     ```
-2. **Run the model**. This implementation offers several cGAN configurations. Edit the *opts* variable in ```run_segan.py``` for choosing the cofiguration. The results will be automatically saved to different folders. The folder name is generated from ```files_ops.py ``` and the foldername automatically includes different configuration options.
+2. **Run the model**. This implementation offers several cGAN configurations. Edit the ```opts``` variable in ```run_segan.py``` for choosing the cofiguration. The results will be automatically saved to different folders. The folder name is generated from ```files_ops.py ``` and the foldername automatically includes different configuration options.
     ```python
     python run_segan.py
     ```
